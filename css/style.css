@@ -1,4 +1,4 @@
-:root{
+ :root{
     --yellow: rgb(255,196,34);
     --orange:#f15209;
     --black:#272727;
@@ -18,19 +18,53 @@ html{
 }
 body{
     background:linear-gradient(to right ,var(--orange), var(--black) );
-    margin:20px;
+    margin:0px;
 }
 .party{
     grid-area:party;
+    padding: 10px;
     min-height: 450px;
     background-image:url("../img/hqdefault.jpg");
     background-size: cover;
     background-position: center left;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
     
+}
+.party > * {
+    background: var(--yellow);
+}
+.cta p{
+    margin: 0;
+}
+.cta{
+    background-color: var(--yellow);
+    opacity: 0.4;
+    display:grid;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
 }
 .cta1{
     grid-area: cta1;
 }
 .cta2{
     grid-area: cta2;
+}
+@media (max-width:1000px){
+    .top{
+        grid-template-areas: 
+        "party party"
+        "cta1 cta2";
+    }
+}
+@media (max-width:420px){
+    .top{
+        grid-template-areas: 
+        "party "
+        "cta1"
+        "cta2";
+    }
 }
